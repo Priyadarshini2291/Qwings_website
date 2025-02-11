@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QWINGS Company</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            color: rgb(238, 70, 9);
+            font-size: 28px;
+        }
+
+        header .logo img {
+            height: 50px; 
+            margin-right: 10px; 
+        }
+
+        header .logo h2 {
+            margin: 0;
+            color: rgb(218, 225, 234);
+            font-size: 26px;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: scrollText 20s linear infinite;
+        }
+
+        @keyframes scrollText {
+            0% {
+                transform: translateX(0%);
+            }
+            100% {
+                transform: translateX(calc(100% + 100vw)); 
+            }
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-end; 
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        main {
+            padding: 20px 0;
+            min-height: calc(100vh - 240px); /* Adjust based on header and footer height */
+        }
+
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+            display: none; /* Initially hide all sections */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            padding-top: 56.25%; /* 16:9 aspect ratio (change as needed) */
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        img.responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-end; /* Align items to the right */
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            header {
+                flex-direction: column;
+            }
+
+            header .logo h2 {
+                position: static;
+                animation: none;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container clearfix">
+            <div class="logo">
+                <img src="logoqw.png" alt="QWINGS Logo">
+                <div>
+                    <h2>IITM RESEARCH PARK</h2>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="toggleSection('home')">Home</a></li>
+                    <li><a href="#" onclick="toggleSection('about')">About Us</a></li>
+                    <li><a href="#" onclick="toggleSection('services')">Services</a></li>
+                    <li><a href="#" onclick="toggleSection('contact')">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" style="display: block;">
+            <div class="container">
+                <h2>Welcome to QWINGS</h2>
+                <p>
+                    <a href="https://www.linkedin.com/company/qwings/" target="_blank">LinkedIn</a> |
+                    <a href="https://www.instagram.com/qwings_in?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank">Instagram</a>
+                </p>
+                <img src="IITM.jpg" alt="IITM Research Park" class="responsive">
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2>About Us</h2>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.4717560103697!2d80.23857101482421!3d12.990695318862187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52670152d9b31b%3A0x53a4dfc8e3c8ac96!2sIITM%20Research%20Park%2C%20Chennai%2C%20Tamil%20Nadu%20600%20113!5e0!3m2!1sen!2sin!4v1623791235616!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+                <p>
+                    Address: IIT Madras Research Park, Build Lab, C-Block, Kanagam Road, Taramani, Chennai – 600 113.
+                </p>
+                <p>
+                    India's 1st & Largest STEM ecosystem. Qwings™ was founded in 2020, and we have accomplished so much over the years.
+                    To create a world where every student not only acquires 21st-century skills from top global researchers but is also nurtured to transform those skills into monetizable opportunities.
+                </p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="container">
+                <h2>Our Services</h2>
+                <ul>
+                    <li>Deployment of STEM lab</li>
+                    <li>Training and Tracking</li>
+                    <li>Complete management</li>
+                    <li>Lab upgrades and Showcases</li>
+                    <li>Tech-fests in school
+                        <br>
+                        ✓Participation in challenges
+                        <br>
+                        ✓National level presence
+                        <br>
+                        ✓Automate school Campus
+                        <br>
+                        ✓Regular videos of projects</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>Feel free to reach out to us for any inquiries or collaborations.</p>
+                <p>Email: info@qwings.com</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 QWINGS. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(sectionId) {
+            // Hide all sections first
+            document.querySelectorAll('section').forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Display the clicked section
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
